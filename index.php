@@ -2,16 +2,11 @@
 $resultado = 0;
 $num1 = '';
 $num2 = '';
-$num1Original = '';
-$num2Original = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $debugFlag = true;
-    $num1Original = $_POST['num1'] ?? '';
-    $num2Original = $_POST['num2'] ?? '';
-    $num1 = (float) $num1Original;
-    $num2 = (float) $num2Original;
+    $num1 = (float) $_POST['num1'];
+    $num2 = (float) $_POST['num2'];
     $boton = $_POST['operacion'] ?? '';
 
     switch ($boton) {
@@ -66,12 +61,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             <div class="form-group">
                 <label for="num1">Primer número</label>
-                <input type="number" step="any" id="num1" name="num1" value="<?php echo $num1Original; ?>" required>
+                <input type="number" step="any" id="num1" name="num1" value="<?php echo $num1; ?>" required>
             </div>
 
             <div class="form-group">
                 <label for="num2">Segundo número</label>
-                <input type="number" step="any" id="num2" name="num2" value="<?php echo $num2Original; ?>" required>
+                <input type="number" step="any" id="num2" name="num2" value="<?php echo $num2; ?>" required>
             </div>
 
             <div class="form-group">
